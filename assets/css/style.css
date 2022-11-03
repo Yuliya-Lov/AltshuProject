@@ -1,11 +1,14 @@
-body {
+body, header,main, article, section, footer,div, h1, h2, h3, h4, h5, h6 {
     margin: 0;
 }
 h1,h2,h3,h4,h5,h6 {
     font-family: 'Crete Round';
     font-style: italic;
 }
-
+/* div, section, article, main, footer, header, nav , table {
+    border:5px solid black;
+}
+*/
 p {
     font-family: 'Inika';
     font-style: normal;
@@ -41,6 +44,31 @@ a {
 }
 ul {
     list-style-type: none;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items:flex-end;
+}
+li {
+    padding-right: 57px;
+    font-size: 24px;
+    font-family: 'Crete Round';
+    color:rgba(255, 255, 255, 0.25);
+    text-align: right;
+    
+}
+header {
+    display: flex;
+    flex-direction: row;
+    justify-content:space-between;
+    align-items: center;
+    height: 33px;
+    padding: 25px 80px;
+}
+nav {
+    display: flex;
+    flex-direction: row;
+    justify-content:flex-end;
 }
 .red-background {
     background-color:#BE5845;
@@ -50,7 +78,9 @@ ul {
 }
 /* картинка не устанавливается как фон (( */
 .book-background {
-    background-image: url(".\assets\Images\books.png");
+    height: 400px;
+    width: 720px;
+    background-image: url("./assets/Images/books.png");
     background-size: no-repeat;
     background-position: center;
     background-size: cover;
@@ -102,6 +132,7 @@ ul {
     font-weight: 400;
     font-size: 22px;
 }
+/* placeholder не работает( */
 placeholder{
     font-family: 'Inika';
     font-style: normal;
@@ -109,7 +140,6 @@ placeholder{
     font-size: 19px;
     color: #FB8D76;
 }
-/* placeholder не работает( */
 input {
     background-color: #8C8057;
     width: 290px;
@@ -123,7 +153,7 @@ input {
     width: 274px;
     height: 69px;
     background: #FB8D76;
-    border-color: #8C8057;
+    border-color: #BE5845;
     border-radius: 32px;
     color: #FFFFFF;
     font-family: 'Crete Round';
@@ -133,7 +163,7 @@ input {
     width: 274px;
     height: 69px;
     background: #FFFFFF;
-    border-color: #8C8057;
+    border-color: #BE5845;
     border-radius: 32px;
     color: #BE5845;
     font-family: 'Crete Round';
@@ -146,8 +176,29 @@ input {
     right: 0%;
     top: 0px;
     background: #FB8D76;
-    border-color: #8C8057;
+    border-color: #BE5845;
     color: #FFFFFF;
     font-family: 'Crete Round';
     font-size: 20px;
+}
+.title-of-article {
+    display: flex;
+    flex-direction: row;
+    padding: 5px 20px;
+    align-items:baseline:
+}
+.wave {
+    height: 10px;
+    width: 72px;
+}
+.mountains {
+    width: 50%;
+    height: 770px;
+}
+.start {
+    display: flex;
+    flex-direction: row;
+    height: 770px;
+    justify-content:space-between;
+    padding: 0px 0px 0px 80px;
 }
