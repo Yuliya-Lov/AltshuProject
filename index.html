@@ -32,7 +32,7 @@
                     <img src="./assets/Images/cup.png" alt="cup">
                     <div>
                         <p class="inika-15">Passed the Altshu Web Developing Course</p>
-                        <p class="inika-15">WebDevelopment 2022 • altshu.com</p>
+                        <p class="inika-15">WebDevelopment 2022 • <a href="https://altshu.com/" target="_blank">altshu.com</a></p>
                     </div>
                 </footer>
             </div>
@@ -67,7 +67,7 @@
                         </tr>
                     </table>
                 </div>
-                <div>
+                <div class="skills">
                     <img src="./assets/Images/HTML+CSS.png" alt="HTML+CSS">
                     <img src="./assets/Images/JS+React.png" alt="JS+React">
                     <img src="./assets/Images/PHP.png" alt="PHP+YII-2">
@@ -103,7 +103,7 @@
                     <h4>I know how to create a backend for a website using PHP</h4>
                     <p class="inika-15">I can make it work)</p>
                 </section>
-                <section>
+                <section class="last-section-of-result">
                     <img src="./assets/Images/Img_5.png" alt="Image">
                     <h4>I create my first projects</h4>
                     <p class="inika-15">In my portfolio there are several interesting projects to start a career in web
@@ -226,7 +226,7 @@
             </div>
         </nav>
     </main>
-    <footer>
+    <footer class="floor">
         <div class="anchor" id="contacts"></div>
         <div class="title-of-article">
             <img class="wave" src="./assets/Images/white_wave.png" alt="white wave">
@@ -245,6 +245,23 @@
                     <p class="inika-19 foot-href"><a href="#education">My education</a></p>
                     <p class="inika-19 foot-href"><a href="#about">About</a></p>
                     <p class="inika-19 foot-href"><a href="#blog">Blog</a></p>
+                    <p  id="start-to-feedback" class="inika-19 foot-href">Leave your feedback</p>
+                    <div class="modal-win">
+                        <h4>Feedback is important to me!<br/>You can write it below:</h4>
+                        <form class="feedback-form">
+                            <p class="part-of-form">Your name:<input class="input-of-form" id="name" type="text" required></p>
+                            <p class="part-of-form">Your e-mail:<input class="input-of-form" type="email"></p>
+                            <textarea rows=9 cols=51 required></textarea>
+                            <div class="form-buttons">
+                                <button  class="submit-modal-win" type="submit">Submit</button>
+                                <button class="reset-modal-win" type="reset">Reset</button>
+                            </div>
+                        </form>  
+                    </div>
+                    <div class="thanks">
+                        <h4 class="thanks-text"></h4>
+                        <button clas="ok-button">OK</button>
+                    </div>
                 </div>
                 <div class="white-text">
                     <p class="inika-19 foot-href"><a href="https://vk.com/id3467343" target="_blank">vk</a></p>
@@ -259,7 +276,7 @@
             <div class="subscribe">
                 <p class="white-text">Subscribe to my weekly newsletter</p>
                 <form>
-                    <input type="email" placeholder="e-mail">
+                    <input  class="input-subscribe" type="email" placeholder="e-mail">
                     <button class="pink-button">Subscribe</button>
                 </form>
             </div>
@@ -269,6 +286,7 @@
             <p>© Powered by Yuliya LOV, 2022</p>
         </div>
     </footer>
+    <script src="./assets/script.js"></script>
 </body>
 
 </html>
