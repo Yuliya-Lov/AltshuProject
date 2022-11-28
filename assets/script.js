@@ -30,19 +30,37 @@ let thanksText  = document.querySelector(".thanks-text");
 thanksText.textContent = "Thank you for  your opinion, my friend!";
 let OkButton  = document.querySelector(".ok-button");
 let SubmitButton = document.querySelector(".submit-modal-win");
+let FeedbackForm = document.querySelector(".feedback-form");
 
-function showThanks() {
-    modalWin.style.display="none";
-    thanksBlock.style.zIndex ="2";
-    thanksBlock.style.display="block";
-    return false;
+let FeedbackArr = {
+    userName: value(document.querySelector("#name")),
+    userEmail: document.querySelector("#e-mail"),
+    userFeedback: document.querySelector("#feedback-text"),
+}
+
+function NewFeedback() {
+    let Readfeedback = new  FeedbackArr;
+    console.log(Readfeedback);
+    return Readfeedback;
 }
 
 
-SubmitButton.addEventListener ("click", (evt) => {
-    evt.preventDefault();
-    showThanks()
-    }
-)
+/* function showThanks() {
+    modalWin.style.display="none";
+    thanksBlock.style.zIndex ="2";
+    thanksBlock.style.display="block";
+}
+ */
+SubmitButton.addEventListener ("click", () => {alert ("thanks")})
+
+/* SubmitButton.addEventListener ("click", () => {
+    preventDef(evt)
+    //showThanks();
+    alert('нажали SubmitButton');
+    darkWin.style.opacity="0.9";
+}) */
+
+
+//динамический контент:
 
 

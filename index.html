@@ -12,17 +12,20 @@
 <body>
     <header>
         <img src="./assets/Images/Blog.png" alt="square">
-        <ul> <img class="hamburger" src="./assets/Images/hamburger.png" alt="hamburger">
+        <div class="top-menu">
+        <ul> 
             <li><a href="#about">About</a></li>
             <li><a href="#education">My education</a></li>
             <li><a href="#blog">Blog</a></li>
             <li><a href="#contacts">Contacts</a></li>
         </ul>
+        <img class="hamburger" src="./assets/Images/hamburger.png" alt="hamburger">
+        </div>
     </header>
     <main>
         <article class="start">
             <div class="hi">
-                <h2 class="white-text">“Every mountain peak is within reach if you just keep climbing.” </h2>
+                <h3 class="white-text">“Every mountain peak is within reach if you just keep climbing.” </h3>
                 <span class="autor">B. Finlay</span>
                 <br>
                 <p class="white-text inika-22">Hi! I am Yulia, I want to develop in the field of web development and
@@ -43,7 +46,7 @@
             <div class="experience_first_part">
                 <div class="title-of-article">
                     <img class="wave" src="./assets/Images/red_wave.png" alt="red wave">
-                    <h6 class="red-text">About</h6>
+                    <h2 class="red-text h2-title-of-article">About</h2>
                 </div>
                 <div class="review">
                     <img src="./assets/Images/stars.png" alt="five stars">
@@ -53,7 +56,7 @@
             </div>
             <div class="experience_second_part">
                 <div>
-                    <h2>In the near future I'm going to develop my first websites</h2>
+                    <h3>In the near future I'm going to develop my first websites</h3>
                     <table>
                         <tr class="months">
                             <th>2+</th>
@@ -79,10 +82,10 @@
             <div class="anchor" id="education"></div>
             <div class="title-of-article">
                 <img class="wave" src="./assets/Images/red_wave.png" alt="red wave">
-                <h6 class="red-text">My education</h6>
+                <h2 class="red-text h2-title-of-article">My education</h2>
             </div>
             <div class="result-sections">
-                <h1>The results of education I want to achieve.</h1>
+                <h2>The results of education I want to achieve.</h2>
                 <section>
                     <img src="./assets/Images/Img_1.png" alt="Image">
                     <h4>I know the basics of UI/UX design</h4>
@@ -119,9 +122,9 @@
                     <section class="white-text services-first-section">
                         <div class="title-of-article">
                             <img class="wave" src="./assets/Images/white_wave.png" alt="white wave">
-                            <h6 class="white-text">Services</h6>
+                            <h2 class="white-text h2-title-of-article">Services</h2>
                         </div>
-                        <h2 class="white-text">Pushing the boundaries of your potential</h2>
+                        <h3 class="white-text">Pushing the boundaries of your potential</h3>
                     </section>
                     <section class="white-text services-middle-section">
                         <img src="./assets/Images/symbol_3.png" alt="symbol">
@@ -162,10 +165,10 @@
             <div class="anchor" id="blog"></div>
             <div class="title-of-article">
                 <img class="wave" src="./assets/Images/red_wave.png" alt="red wave">
-                <h6 class="red-text">Blog</h6>
+                <h2 class="red-text h2-title-of-article">Blog</h2>
             </div>
             <div class="long-title_button">
-                <h1>Words On Design, Tech & Other Things I Love</h1>
+                <h2>Words On Design, Tech & Other Things I Love</h2>
                 <button class="pink-button">Explore all posts <b>&rarr;</b></button>
             </div>
             <section class="part-of-blog">
@@ -174,7 +177,7 @@
                     <div class="blog-description">
                         <h5 class="red-text">21 Oct, 2022</h5>
                         <h4>How I've started learning web</h4>
-                        <p class="inika-15">My previous job was not related to web development, but I have exhausted my
+                        <p class="inika-15">My prevus job was not related to web development, but I have exhausted my
                             potential and decided to try a new field of activity.</p>
                     </div>
                 </div>
@@ -230,13 +233,13 @@
         <div class="anchor" id="contacts"></div>
         <div class="title-of-article">
             <img class="wave" src="./assets/Images/white_wave.png" alt="white wave">
-            <h6 class="white-text">Contacts</h6>
+            <h2 class="white-text h2-title-of-article">Contacts</h2>
         </div>
         <div class="run-string">
             <div class="long-string">
-                <h1 class="white-text">Have something in mind?</h1>
+                <h2 class="white-text">Have something in mind?</h2>
                 <span class="pink-text"> Let's connect.</span>
-                <h1 class="white-text">Have something in mind?</h1>
+                <h2 class="white-text">Have something in mind?</h2>
             </div>
         </div>
         <div class="contacts">
@@ -247,11 +250,11 @@
                     <p class="inika-19 foot-href"><a href="#blog">Blog</a></p>
                     <p  id="start-to-feedback" class="inika-19 foot-href">Leave your feedback</p>
                     <div class="modal-win">
-                        <h4>Feedback is important to me!<br/>You can write it below:</h4>
+                        <h4>Feedback is important to me!<br>You can write it below:</h4>
                         <form class="feedback-form">
                             <p class="part-of-form">Your name:<input class="input-of-form" id="name" type="text" required></p>
-                            <p class="part-of-form">Your e-mail:<input class="input-of-form" type="email"></p>
-                            <textarea rows=9 cols=51 required></textarea>
+                            <p class="part-of-form">Your e-mail:<input class="input-of-form" id="e-mail" type="email"></p>
+                            <textarea rows=9 cols=51 id="feedback-text" required></textarea>
                             <div class="form-buttons">
                                 <button  class="submit-modal-win" type="submit">Submit</button>
                                 <button class="reset-modal-win" type="reset">Reset</button>
@@ -260,7 +263,7 @@
                     </div>
                     <div class="thanks">
                         <h4 class="thanks-text"></h4>
-                        <button clas="ok-button">OK</button>
+                        <button class="ok-button">OK</button>
                     </div>
                 </div>
                 <div class="white-text">
@@ -288,5 +291,4 @@
     </footer>
     <script src="./assets/script.js"></script>
 </body>
-
 </html>

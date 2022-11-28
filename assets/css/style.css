@@ -46,7 +46,7 @@ header {
 }
 ul {
     display: flex;
-    flex-direction: row-reverse;
+    flex-direction: row;
     padding-inline-start: 10px;
 }
 li {
@@ -56,25 +56,33 @@ li {
     font-family: 'Crete Round';
     text-align: center;
 }
+.top-menu {
+    display: flex;
+    flex-direction: row;
+    justify-content:flex-end;
+    align-items: center;
+}
 /* img.hamburger {
     position: fixed;
     top: 30px;
     right: 7em;
   }  */
 /*  закончилась реализация верхнего меню */
-h1 {
+/* h1 {
     font-weight: 400;
     font-size: 60px;
     line-height: 66px;
-}
+} */
 h2 {
+    font-weight: 400;
+    font-size: 60px;
+    line-height: 66px;
+} 
+
+h3 {
     font-weight: 400;
     font-size: 48px;
     line-height: 65px;  
-}
-h3 {
-    font-weight: 400;
-    font-size: 32px;
 }
 h4 {
     font-weight: 400;
@@ -120,11 +128,12 @@ h5 {
     height: 15px;
 
 }
-.title-of-article h6 {
+.h2-title-of-article {
     text-transform: uppercase;
     font-size: 16px;
     letter-spacing: 2px;
     font-style: normal;
+    line-height: 16px;
 }
 
 .wave {
@@ -263,7 +272,7 @@ td {
     padding-bottom: 2em;
 } 
 
-.result-sections h1 {
+.result-sections h2 {
     display: flex;
     flex-direction: row;
     width: 100%;
@@ -394,7 +403,7 @@ section>p {
     height: 36px;
     display: flex;
     flex-direction: row;
-    flex-wrap: wrap;
+    flex-wrap: nowrap;
     color: #BE5845; 
     border-bottom: 2px solid #BE5845;
     justify-content: center;
@@ -436,7 +445,7 @@ hr {
     padding-bottom: 3em;
     align-items: center;
 }
-.long-title_button>h1 {
+.long-title_button>h2 {
     width: 50%;
 }
 
@@ -489,7 +498,7 @@ hr {
     background-color: #BE5845;
 }
 .black {
-  color: black;
+    color: black;
 }
 .way:hover {
     text-decoration: underline;
@@ -550,7 +559,7 @@ form {
     justify-content: flex-start;
     align-items: baseline;
 }
-.long-string > h1 {
+.long-string > h2 {
     height: 1em;
     white-space: nowrap;
 }
@@ -744,13 +753,12 @@ textarea {
 
 @media screen and (max-width: 600px) {
     /* реализация верхнего меню */
-    header > ul > li {
-        display: none;
-    }
     ul {
+        display: none;
         overflow: hidden;
     }
-    ul:hover li{
+    
+    .hamburger:hover ~ ul{
         display: block;
         text-align: center;
         padding-right: 1em;
@@ -880,7 +888,7 @@ li:hover {
     .result-sections section>h4 {
         padding-bottom: 0em;
     }
-    .result-sections h1 {
+    .result-sections h2 {
         display: flex;
         flex-direction: row;
         width: 100%;
