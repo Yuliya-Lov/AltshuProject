@@ -27,6 +27,9 @@ body {
     width: 100vw;
     scroll-behavior: smooth;
 }
+.hide {
+    display: none;
+}
 /* реализация верхнего меню */
 header {
     color:  white;
@@ -401,12 +404,15 @@ section>p {
 .view-post {
     width: 120px;
     height: 36px;
+    margin-left: 30px;
+    flex-shrink: 0;
     display: flex;
     flex-direction: row;
     flex-wrap: nowrap;
     color: #BE5845; 
     border-bottom: 2px solid #BE5845;
-    justify-content: center;
+    justify-content: space-around;
+    align-items: center;
 }
 .view-post:hover {
     border-bottom: 3px solid #BE5845;
@@ -453,7 +459,7 @@ hr {
     display: flex;
     justify-content: flex-start;
 }
-.picture-text>img {
+.little-img {
     padding-right: 80px;
 }
 .part-of-blog {
@@ -461,6 +467,9 @@ hr {
     flex-direction: row;
     justify-content: space-between;
     align-items: flex-start;
+}
+.blog-description {
+    flex-shrink: 1;
 }
 .blog-description>h4 {
     padding-top: 1em;
@@ -716,8 +725,8 @@ textarea {
     top:15vh;
     left:0;
     right:0;
-    width: 550px;
-    height: 150px;
+    width: 450px;
+    height: 240px;
     border: 1px solid #BE5845;
     border-radius: 32px;
     background-color: white;
@@ -727,7 +736,7 @@ textarea {
     justify-content: space-around;
     align-items: space-around;
     box-shadow:3px 5px 3px rgba(140, 128, 87, 0.85);
-    padding: 20px 40px;
+    padding: 20px 90px;
 }
 .thanks-text {
     color: #BE5845;
