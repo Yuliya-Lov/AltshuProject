@@ -37,6 +37,8 @@ function FeedbackObj (userName,userEmail,userFeedback) {
     this.userFeedback = userFeedback;
 }
 
+let feedbackArr = [];
+
 function NewFeedback() {
     let Readfeedback = new  FeedbackObj;
     Readfeedback.userName = document.querySelector("#name").value;
@@ -56,6 +58,8 @@ function validateForm() {
         NewFeedback()
         modalWin.style.display="none";
         showThanks();
+        feedbackArr.push(NewFeedback());
+        console.log(feedbackArr);
     } else {
         alert("Please fill in your name and feedback if you want to send them!");
     }
