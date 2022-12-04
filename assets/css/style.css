@@ -726,7 +726,7 @@ textarea {
     left:0;
     right:0;
     width: 450px;
-    height: 240px;
+    height: 352px;
     border: 1px solid #BE5845;
     border-radius: 32px;
     background-color: white;
@@ -736,7 +736,7 @@ textarea {
     justify-content: space-around;
     align-items: space-around;
     box-shadow:3px 5px 3px rgba(140, 128, 87, 0.85);
-    padding: 20px 90px;
+    padding: 30px 90px;
 }
 .thanks-text {
     color: #BE5845;
@@ -746,12 +746,11 @@ textarea {
     text-align: center; 
 }
 .ok-button {
-    width: 20%;
-    margin-top: 20px;
+    margin-top: 45px;
     margin-bottom: 30px;
     align-self: center;
-    width: 100px;
-    height: 49px;
+    width: 221px;
+    height: 67px;
     border: 1px solid #BE5845;
     border-radius: 32px;
     color: #FFFFFF;

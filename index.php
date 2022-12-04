@@ -1,6 +1,5 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -252,19 +251,35 @@
                     <p  id="start-to-feedback" class="inika-19 foot-href">Leave your feedback</p>
                     <div class="modal-win">
                         <h4>Feedback is important to me!<br>You can write it below:</h4>
-                        <form class="feedback-form">
-                            <p class="part-of-form">Your name:<input class="input-of-form" id="name" type="text" required></p>
-                            <p class="part-of-form">Your e-mail:<input class="input-of-form" id="e-mail" type="email"></p>
-                            <textarea rows=9 cols=51 id="feedback-text" required></textarea>
+                        <form  method="post" class="feedback-form">
+                            <p class="part-of-form">Your name:*<input class="input-of-form" id="name" name="name" type="text" required></p>
+                            <p class="part-of-form">Your e-mail:*<input class="input-of-form mail" id="e-mail" name="email" type="email"></p>
+                            <textarea rows=9 cols=51 id="feedback-text"  name="feedback-text" required></textarea>
                             <div class="form-buttons">
-                                <button  class="submit-modal-win" type="submit">Submit</button>
+                                <button  class="submit-modal-win" type="button">Submit</button>
                                 <button class="reset-modal-win" type="reset">Reset</button>
+
+                                <?php
+                                $feedback = $_POST['feedback-text'] ?? "";
+                                $useremail = $_POST['email'] ?? "";
+                                $userName = $_POST['name'] ?? "";
+                                $test = 'не то, что нужно';
+
+                                $fedbackFile = __DIR__ . './feedback.txt';
+                                if ((!(empty($userName))) && (!(empty($feedback)))) {
+                                    $datetime = date(DATE_ATOM);
+                                    file_put_contents($fedbackFile,'Дата размещения: ' . "$datetime" . PHP_EOL . 'Имя пользователя: ' . "$userName" . PHP_EOL . 'E-mail: ' . "$useremail" . PHP_EOL .'Отзыв: '. "$feedback" . PHP_EOL. PHP_EOL. PHP_EOL,
+                                FILE_APPEND);
+                                }
+                                ?>
+
                             </div>
                         </form>  
                     </div>
                     <div class="thanks">
-                        <h4 class="thanks-text"></h4>
-                        <button class="ok-button">OK</button>
+                        <h4 class="thanks-text">Almost done!</h4>
+                        <h4 class="thanks-text js-content-thanks-text"></h4>
+                        <button class="ok-button">Sent it now!</button>
                     </div>
                 </div>
                 <div class="white-text">
@@ -279,9 +294,21 @@
             </div>
             <div class="subscribe">
                 <p class="white-text">Subscribe to my weekly newsletter</p>
-                <form class="subscribe-me">
-                    <input  class="input-subscribe" type="email" placeholder="e-mail">
-                    <button class="pink-button">Subscribe</button>
+                <form  method="post"  id="subscribe-form" class="subscribe-me">
+                    <input  class="input-subscribe mail" type="email"  name="email-for-sub"  id="email-for-sub" placeholder="e-mail">
+                    <button type="button" name="subscribe-button" id="subscribe-button" class="pink-button">Subscribe</button>
+
+
+                    <?php
+                    $emailForSub = $_POST['email-for-sub'] ?? "";
+
+                    $SubscribeMe = __DIR__ . './subscribe-me.txt';
+                    if ((!(empty($emailForSub)))) {
+                    $datetime = date(DATE_ATOM);
+                    file_put_contents($SubscribeMe,'Дата подписки: ' . "$datetime" . PHP_EOL . 'E-mail: ' . "$emailForSub" . PHP_EOL. PHP_EOL. PHP_EOL, FILE_APPEND);
+                    }
+                    ?>
+                    
                 </form>
             </div>
         </div>

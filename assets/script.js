@@ -17,16 +17,17 @@ function showModalWin() {
     darkWin.onclick = function hideModalWin() {
         darkWin.parentNode.removeChild(darkWin);
         modalWin.style.display="none";
+        thanksBlock.style.display="none";
         return false; 
     } 
 }
 let startFeedback  = document.querySelector("#start-to-feedback");
 startFeedback.addEventListener ("click", () => {
     showModalWin()
-})
+}) 
+
 let thanksBlock  = document.querySelector(".thanks");
-let thanksText  = document.querySelector(".thanks-text");
-thanksText.textContent = "Thank you for  your opinion, my friend!";
+let thanksText  = document.querySelector(".js-content-thanks-text");
 let OkButton  = document.querySelector(".ok-button");
 let SubmitButton = document.querySelector(".submit-modal-win");
 let FeedbackForm = document.querySelector(".feedback-form");
@@ -48,34 +49,87 @@ function NewFeedback() {
     return Readfeedback;
 }
 
-function showThanks() {
+function showThanksForFeedback() {
     thanksBlock.style.zIndex ="2";
     thanksBlock.style.display="flex";
+    thanksText.textContent = "Thank you for  your opinion, my friend!";
+    OkButton.addEventListener ("click", () => {
+        darkWin.parentNode.removeChild(darkWin);
+        modalWin.style.display="none";
+        thanksBlock.style.display="none";
+        FeedbackForm.submit();
+        }
+    )
 }
 
-function validateForm() {
-    if (document.querySelector("#name").value && document.querySelector("#feedback-text").value) {
-        NewFeedback()
-        modalWin.style.display="none";
-        showThanks();
-        feedbackArr.push(NewFeedback());
-        console.log(feedbackArr);
+let SubscribeButton = document.querySelector("#subscribe-button");
+let SubscibeForm = document.querySelector("#subscribe-form");
+let Mail;
+let NameOfFeedback = document.querySelector("#name");
+let TextOfFeedback = document.querySelector("#feedback-text");
+
+function validateFeedbackForm() {
+    if (NameOfFeedback.value && TextOfFeedback.value) {
+        return true;
     } else {
         alert("Please fill in your name and feedback if you want to send them!");
+        return false;
     }
 }
 
+function ValidMail() {
+    let example = /^(([^<>()[\].,;:\s@"]+(\.[^<>()[\].,;:\s@"]+)*)|(".+"))@(([^<>()[\].,;:\s@"]+\.)+[^<>()[\].,;:\s@"]{2,})$/iu;
+    if (example.test(Mail.value)) {
+        return true;
+    } else {
+        alert('E-mail adress is not correct!');
+        return false;
+    }
+} 
+
+
 SubmitButton.addEventListener ("click", (e) => {
-    e.preventDefault();
-    validateForm();
+    Mail = document.querySelector("#e-mail");
+    if(validateFeedbackForm() && ValidMail()) {
+        NewFeedback()
+        modalWin.style.display="none";
+        showThanksForFeedback();
+        feedbackArr.push(NewFeedback());
+        console.log(feedbackArr);
+    } 
 } 
 )  
-OkButton.addEventListener ("click", () => {
-    darkWin.parentNode.removeChild(darkWin);
-    modalWin.style.display="none";
-    thanksBlock.style.display="none";
-} 
-)  
+
+function showThanksForSubscribe() {
+    body.appendChild(darkWin);
+    darkWin.style.position="fixed";
+    darkWin.style.opacity="0.5";
+    darkWin.style.backgroundColor="#000";
+    darkWin.style.width="100%";
+    darkWin.style.height="100%";
+    darkWin.style.zIndex="1";
+    darkWin.style.left="0";
+    darkWin.style.top="0";
+    thanksBlock.style.zIndex ="2";
+    thanksBlock.style.display="flex";
+    thanksText.textContent = "Thank you for  your subscribing, my friend!";  
+
+    OkButton.addEventListener ("click", () => {
+        darkWin.parentNode.removeChild(darkWin);
+        modalWin.style.display="none";
+        thanksBlock.style.display="none";
+        SubscibeForm.submit();
+    }
+    )  
+}
+
+SubscribeButton.addEventListener ("click", () => {
+    Mail = document.querySelector("#email-for-sub");
+    if (ValidMail()) {
+        showThanksForSubscribe(); 
+    }
+}
+) 
 
 
 //динамический контент:
@@ -150,4 +204,3 @@ lineBlog.classList.add("hr");
 }
 
 createPartOfBlog(partBlogArray);
-
