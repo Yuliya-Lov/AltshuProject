@@ -1,6 +1,65 @@
+let body = document.querySelector("body");
+
+//реализация верхнего меню
+let width = window.innerWidth;
+if (width < 901) {
+alert (window.innerWidth);
+    let hamburger = document.querySelector('.hamburger');
+    let topMenu = document.querySelector('ul');
+    topMenu.style.display = "none";
+
+    let menuItem = [];
+    menuItem = document.querySelectorAll('li');
+    for (let i = 0; i < menuItem.length; i++) {
+        menuItem[i].classList.add("list-li");
+        menuItem[0].classList.add("first-li");
+        menuItem[3].classList.add("last-li");
+    }   
+    hamburger.addEventListener ("mouseover", () => {
+        topMenu.style.display = "flex";
+        topMenu.classList.add("visible-ul");
+        for (let i = 0; i < menuItem.length; i++) {
+            menuItem[i].style.display = "block";
+        }
+    })
+    document.querySelector('.floor').addEventListener ("mousemove", () => {
+        topMenu.style.display = "none";
+        topMenu.classList.remove ("visible-ul");
+    })
+    document.querySelector('main').addEventListener ("mousemove", () => {
+        topMenu.style.display = "none";
+        topMenu.classList.remove ("visible-ul");
+    })
+    hamburger.addEventListener ("click", () => {
+        topMenu.style.display = "flex";
+        topMenu.classList.add("visible-ul");
+        for (let i = 0; i < menuItem.length; i++) {
+            menuItem[i].style.display = "block";
+        }
+    })
+    
+    for (let i = 0; i < menuItem.length; i++) {
+        menuItem[i].addEventListener ("mouseover", () => {
+        menuItem[i].classList.add("mouseover-li");
+        })
+        menuItem[i].addEventListener ("mouseout", () => {
+        menuItem[i].classList.remove("mouseover-li");  
+        })
+        menuItem[i].addEventListener ("click", () => {
+        topMenu.style.display = "none";
+        })
+    }
+    body.addEventListener ("click", () => {
+        topMenu.style.display = "none";
+    })
+    
+}
+
+//реализация модальных окон feedback  и thanks
+
 let modalWin = document.querySelector(".modal-win");
 let darkWin = document.createElement("div");
-    let body = document.querySelector("body");
+
 function showModalWin() {
     body.appendChild(darkWin);
     darkWin.style.position="fixed";
@@ -21,6 +80,7 @@ function showModalWin() {
         return false; 
     } 
 }
+
 let startFeedback  = document.querySelector("#start-to-feedback");
 startFeedback.addEventListener ("click", () => {
     showModalWin()
@@ -53,6 +113,7 @@ function showThanksForFeedback() {
     thanksBlock.style.zIndex ="2";
     thanksBlock.style.display="flex";
     thanksText.textContent = "Thank you for  your opinion, my friend!";
+    OkButton.textContent = "Sent it now 🗸";
     OkButton.addEventListener ("click", () => {
         darkWin.parentNode.removeChild(darkWin);
         modalWin.style.display="none";
@@ -113,6 +174,7 @@ function showThanksForSubscribe() {
     thanksBlock.style.zIndex ="2";
     thanksBlock.style.display="flex";
     thanksText.textContent = "Thank you for  your subscribing, my friend!";  
+    OkButton.textContent = "Subscribe now 🗸";
 
     OkButton.addEventListener ("click", () => {
         darkWin.parentNode.removeChild(darkWin);
@@ -140,7 +202,7 @@ let partBlogArray = [
     title: "How I've started learning web",
     text: "My prevus job was not related to web development, but I have exhausted my potential and decided to try a new field of activity.",
     },
-    { 
+    {
     wherePic:"./assets/Images/Little_img_2.png",
     when: "03 Dec, 2022",
     title: "Why does JavaScript is so exciting",
@@ -151,7 +213,7 @@ let partBlogArray = [
     when: "20 Dec, 2022", 
     title: "How I've developed this site",
     text: "This is my training ground, where I grow my skills)"
-    },
+    }
 ];
 let arrow = document.createElement("p");
 
@@ -204,3 +266,4 @@ lineBlog.classList.add("hr");
 }
 
 createPartOfBlog(partBlogArray);
+
