@@ -1,6 +1,64 @@
+let body = document.querySelector("body");
+
+//реализация верхнего меню
+let width = window.innerWidth;
+if (width < 901) {
+    let hamburger = document.querySelector('.hamburger');
+    let topMenu = document.querySelector('ul');
+    topMenu.style.display = "none";
+
+    let menuItem = [];
+    menuItem = document.querySelectorAll('li');
+    for (let i = 0; i < menuItem.length; i++) {
+        menuItem[i].classList.add("list-li");
+        menuItem[0].classList.add("first-li");
+        menuItem[3].classList.add("last-li");
+    }   
+    hamburger.addEventListener ("mouseover", () => {
+        topMenu.style.display = "flex";
+        topMenu.classList.add("visible-ul");
+        for (let i = 0; i < menuItem.length; i++) {
+            menuItem[i].style.display = "block";
+        }
+    })
+    document.querySelector('.floor').addEventListener ("mousemove", () => {
+        topMenu.style.display = "none";
+        topMenu.classList.remove ("visible-ul");
+    })
+    document.querySelector('main').addEventListener ("mousemove", () => {
+        topMenu.style.display = "none";
+        topMenu.classList.remove ("visible-ul");
+    })
+    hamburger.addEventListener ("click", () => {
+        topMenu.style.display = "flex";
+        topMenu.classList.add("visible-ul");
+        for (let i = 0; i < menuItem.length; i++) {
+            menuItem[i].style.display = "block";
+        }
+    })
+    
+    for (let i = 0; i < menuItem.length; i++) {
+        menuItem[i].addEventListener ("mouseover", () => {
+        menuItem[i].classList.add("mouseover-li");
+        })
+        menuItem[i].addEventListener ("mouseout", () => {
+        menuItem[i].classList.remove("mouseover-li");  
+        })
+        menuItem[i].addEventListener ("click", () => {
+        topMenu.style.display = "none";
+        })
+    }
+    body.addEventListener ("click", () => {
+        topMenu.style.display = "none";
+    })
+    
+}
+
+//реализация модальных окон feedback  и thanks
+
 let modalWin = document.querySelector(".modal-win");
 let darkWin = document.createElement("div");
-    let body = document.querySelector("body");
+
 function showModalWin() {
     body.appendChild(darkWin);
     darkWin.style.position="fixed";
@@ -17,16 +75,18 @@ function showModalWin() {
     darkWin.onclick = function hideModalWin() {
         darkWin.parentNode.removeChild(darkWin);
         modalWin.style.display="none";
+        thanksBlock.style.display="none";
         return false; 
     } 
 }
+
 let startFeedback  = document.querySelector("#start-to-feedback");
 startFeedback.addEventListener ("click", () => {
     showModalWin()
-})
+}) 
+
 let thanksBlock  = document.querySelector(".thanks");
-let thanksText  = document.querySelector(".thanks-text");
-thanksText.textContent = "Thank you for  your opinion, my friend!";
+let thanksText  = document.querySelector(".js-content-thanks-text");
 let OkButton  = document.querySelector(".ok-button");
 let SubmitButton = document.querySelector(".submit-modal-win");
 let FeedbackForm = document.querySelector(".feedback-form");
@@ -37,6 +97,8 @@ function FeedbackObj (userName,userEmail,userFeedback) {
     this.userFeedback = userFeedback;
 }
 
+let feedbackArr = [];
+
 function NewFeedback() {
     let Readfeedback = new  FeedbackObj;
     Readfeedback.userName = document.querySelector("#name").value;
@@ -46,32 +108,89 @@ function NewFeedback() {
     return Readfeedback;
 }
 
-function showThanks() {
+function showThanksForFeedback() {
     thanksBlock.style.zIndex ="2";
     thanksBlock.style.display="flex";
+    thanksText.textContent = "Thank you for  your opinion, my friend!";
+    OkButton.textContent = "Sent it now 🗸";
+    OkButton.addEventListener ("click", () => {
+        darkWin.parentNode.removeChild(darkWin);
+        modalWin.style.display="none";
+        thanksBlock.style.display="none";
+        FeedbackForm.submit();
+        }
+    )
 }
 
-function validateForm() {
-    if (document.querySelector("#name").value && document.querySelector("#feedback-text").value) {
-        NewFeedback()
-        modalWin.style.display="none";
-        showThanks();
+let SubscribeButton = document.querySelector("#subscribe-button");
+let SubscibeForm = document.querySelector("#subscribe-form");
+let Mail;
+let NameOfFeedback = document.querySelector("#name");
+let TextOfFeedback = document.querySelector("#feedback-text");
+
+function validateFeedbackForm() {
+    if (NameOfFeedback.value && TextOfFeedback.value) {
+        return true;
     } else {
         alert("Please fill in your name and feedback if you want to send them!");
+        return false;
     }
 }
 
+function ValidMail() {
+    let example = /^(([^<>()[\].,;:\s@"]+(\.[^<>()[\].,;:\s@"]+)*)|(".+"))@(([^<>()[\].,;:\s@"]+\.)+[^<>()[\].,;:\s@"]{2,})$/iu;
+    if (example.test(Mail.value)) {
+        return true;
+    } else {
+        alert('E-mail adress is not correct!');
+        return false;
+    }
+} 
+
+
 SubmitButton.addEventListener ("click", (e) => {
-    e.preventDefault();
-    validateForm();
+    Mail = document.querySelector("#e-mail");
+    if(validateFeedbackForm() && ValidMail()) {
+        NewFeedback()
+        modalWin.style.display="none";
+        showThanksForFeedback();
+        feedbackArr.push(NewFeedback());
+        console.log(feedbackArr);
+    } 
 } 
 )  
-OkButton.addEventListener ("click", () => {
-    darkWin.parentNode.removeChild(darkWin);
-    modalWin.style.display="none";
-    thanksBlock.style.display="none";
-} 
-)  
+
+function showThanksForSubscribe() {
+    body.appendChild(darkWin);
+    darkWin.style.position="fixed";
+    darkWin.style.opacity="0.5";
+    darkWin.style.backgroundColor="#000";
+    darkWin.style.width="100%";
+    darkWin.style.height="100%";
+    darkWin.style.zIndex="1";
+    darkWin.style.left="0";
+    darkWin.style.top="0";
+    thanksBlock.style.zIndex ="2";
+    thanksBlock.style.display="flex";
+    thanksText.textContent = "Thank you for  your subscribing, my friend!";  
+    OkButton.textContent = "Subscribe now 🗸";
+
+    OkButton.addEventListener ("click", () => {
+        darkWin.parentNode.removeChild(darkWin);
+        modalWin.style.display="none";
+        thanksBlock.style.display="none";
+        SubscibeForm.submit();
+    }
+    )  
+}
+
+SubscribeButton.addEventListener ("click", () => {
+    Mail = document.querySelector("#email-for-sub");
+    if (ValidMail()) {
+        showThanksForSubscribe(); 
+    }
+}
+) 
 
 
 //динамический контент:
@@ -82,7 +201,7 @@ let partBlogArray = [
     title: "How I've started learning web",
     text: "My prevus job was not related to web development, but I have exhausted my potential and decided to try a new field of activity.",
     },
-    { 
+    {
     wherePic:"./assets/Images/Little_img_2.png",
     when: "03 Dec, 2022",
     title: "Why does JavaScript is so exciting",
@@ -93,7 +212,7 @@ let partBlogArray = [
     when: "20 Dec, 2022", 
     title: "How I've developed this site",
     text: "This is my training ground, where I grow my skills)"
-    },
+    }
 ];
 let arrow = document.createElement("p");
 

@@ -1,11 +1,10 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="./assets/css/style.css">
+    <link rel="stylesheet" href="./assets/style.css">
     <title>My project &#128161;</title>
 </head>
 
@@ -14,10 +13,10 @@
         <img src="./assets/Images/Blog.png" alt="square">
         <div class="top-menu">
         <ul> 
-            <li><a href="#about">About</a></li>
-            <li><a href="#education">My education</a></li>
-            <li><a href="#blog">Blog</a></li>
-            <li><a href="#contacts">Contacts</a></li>
+            <li onClick="location.href='#about'"><a href="#about">About</a></li>
+            <li onClick="location.href='#education'"><a href="#education">My education</a></li>
+            <li onClick="location.href='#blog'"><a href="#blog">Blog</a></li>
+            <li onClick="location.href='#contacts'"><a href="#contacts">Contacts</a></li>
         </ul>
         <img class="hamburger" src="./assets/Images/hamburger.png" alt="hamburger">
         </div>
@@ -27,19 +26,20 @@
             <div class="hi">
                 <h3 class="white-text">“Every mountain peak is within reach if you just keep climbing.” </h3>
                 <span class="autor">B. Finlay</span>
-                <br>
+                <!-- <br> -->
                 <p class="white-text inika-22">Hi! I am Yulia, I want to develop in the field of web development and
                     create user-friendly applications.</p>
-                <button class="white-button">Write me! &#9993;</button>
+                <button class="white-button"><a class ="red-text" href="mailto:jul-yaris@yandex.ru">Write me! &#9993;</a></button>
                 <footer class="white-text altshu">
                     <img src="./assets/Images/cup.png" alt="cup">
                     <div>
                         <p class="inika-15">Passed the Altshu Web Developing Course</p>
-                        <p class="inika-15">WebDevelopment 2022 • <a href="https://altshu.com/" target="_blank">altshu.com</a></p>
+                        <p class="inika-15">WebDevelopment 2022  •  <a href="https://altshu.com/" target="_blank">altshu.com</a></p>
                     </div>
                 </footer>
             </div>
-            <img class="mountains" src="./assets/Images/mountains.png" alt="mountains">
+            <div class="mountains"></div>
+            <!-- <img class="mountains" src="./assets/Images/mountains.png" alt="mountains"> -->
         </article>
         <article class="experience">
             <div class="anchor" id="about"></div>
@@ -50,13 +50,13 @@
                 </div>
                 <div class="review">
                     <img src="./assets/Images/stars.png" alt="five stars">
-                    <p class="inika-19">This is a place for review</p>
+                    <p class="inika-19"> This is a place for review This is a place for review This is a place for review This is a place for review </p>
                     <img src="./assets/Images/smirnovaa.png" alt="Smirnova Anastasia">
                 </div>
             </div>
             <div class="experience_second_part">
                 <div>
-                    <h3>In the near future I'm going to develop my first websites</h3>
+                    <h3 class="h3-experience_second_part">In the near future I'm going to develop my first websites</h3>
                     <table>
                         <tr class="months">
                             <th>2+</th>
@@ -89,30 +89,32 @@
                 <section>
                     <img src="./assets/Images/Img_1.png" alt="Image">
                     <h4>I know the basics of UI/UX design</h4>
-                    <p class="inika-15">I will be able to develop attractive and user-friendly website design</p>
+                    <p class="inika-15 result-comment">I will be able to develop attractive and user-friendly website design</p>
                 </section>
                 <section>
                     <img src="./assets/Images/Img_2.png" alt="Image">
                     <h4>I can make up the developed design using HTML and CSS</h4>
-                    <p class="inika-15">I know how to create a page structure and describe the page appearance</p>
+                    <p class="inika-15 result-comment">I know how to create a page structure and describe the page appearance</p>
                 </section>
                 <section>
                     <img src="./assets/Images/Img_3.png" alt="Image">
                     <h4>I add interactive content to the pages using JS</h4>
-                    <p class="inika-15">I know how to set up user interaction with content</p>
+                    <p class="inika-15 result-comment">I know how to set up user interaction with content</p>
                 </section>
                 <section>
                     <img src="./assets/Images/Img_4.png" alt="Image">
                     <h4>I know how to create a backend for a website using PHP</h4>
-                    <p class="inika-15">I can make it work)</p>
+                    <p class="inika-15 result-comment">I can make it work)</p>
                 </section>
-                <section class="last-section-of-result">
+                <section>
                     <img src="./assets/Images/Img_5.png" alt="Image">
                     <h4>I create my first projects</h4>
-                    <p class="inika-15">In my portfolio there are several interesting projects to start a career in web
+                    <p class="inika-15 result-comment">In my portfolio there are several interesting projects to start a career in web
                         development</p>
                 </section>
+                <section class="last-section-of-result">
                 <button class="square-button">View all <br>projects</button>
+                </section>
             </div>
         </article>
         <article>
@@ -155,7 +157,7 @@
                             make a great first impression.</p>
                     </section>
                     <section class="white-text services-last-section">
-                        <button class="white-button">Contact me</button>
+                        <button class="white-button"><a href="#contacts" class="red-text">Contact me</a></button>
                         <img src="./assets/Images/two_waves.png" alt="two waves">
                     </section>
                 </div>
@@ -214,18 +216,18 @@
                 <div class="view-post">
                     <p class="red-text inika-19">View post &rarr;</p>
                 </div>
-            </section> -->
-            <hr>
+            </section>
+            <hr>-->
         </article>
         <nav class="fast-switch">
             <div class="book-background">
                 <h4>My education</h4>
-                <p class="inika-15">Favorite projects, award-winning campaigns and more.</p>
+                <p class="inika-15 fast-switch-comment">Favorite projects, award-winning campaigns and more.</p>
                 <p class="inika-19 way"><a class="black" href="#education">View all <b>&rarr;</b></a></p>
             </div>
             <div class="red-about">
                 <h4 class="white-text">About</h4>
-                <p class="white-text inika-15">My journey, career highlights and everything else you need to know.</p>
+                <p class="white-text inika-15 fast-switch-comment">My journey, career highlights and everything else you need to know.</p>
                 <p class="white-text inika-19 way"><a href="#about">Get to know me <b>&rarr;</b></a></p>
             </div>
         </nav>
@@ -252,19 +254,35 @@
                     <p  id="start-to-feedback" class="inika-19 foot-href">Leave your feedback</p>
                     <div class="modal-win">
                         <h4>Feedback is important to me!<br>You can write it below:</h4>
-                        <form class="feedback-form">
-                            <p class="part-of-form">Your name:<input class="input-of-form" id="name" type="text" required></p>
-                            <p class="part-of-form">Your e-mail:<input class="input-of-form" id="e-mail" type="email"></p>
-                            <textarea rows=9 cols=51 id="feedback-text" required></textarea>
+                        <form  method="post" class="feedback-form">
+                            <p class="part-of-form">Your name:*<input class="input-of-form" id="name" name="name" type="text" required></p>
+                            <p class="part-of-form">Your e-mail:*<input class="input-of-form mail" id="e-mail" name="email" type="email"></p>
+                            <textarea rows=9 cols=51 id="feedback-text"  name="feedback-text" required></textarea>
                             <div class="form-buttons">
-                                <button  class="submit-modal-win" type="submit">Submit</button>
+                                <button  class="submit-modal-win" type="button">Submit</button>
                                 <button class="reset-modal-win" type="reset">Reset</button>
+
+                                <?php
+                                $feedback = $_POST['feedback-text'] ?? "";
+                                $useremail = $_POST['email'] ?? "";
+                                $userName = $_POST['name'] ?? "";
+                                $test = 'не то, что нужно';
+
+                                $fedbackFile = __DIR__ . './feedback.txt';
+                                if ((!(empty($userName))) && (!(empty($feedback)))) {
+                                    $datetime = date(DATE_ATOM);
+                                    file_put_contents($fedbackFile,'Дата размещения: ' . "$datetime" . PHP_EOL . 'Имя пользователя: ' . "$userName" . PHP_EOL . 'E-mail: ' . "$useremail" . PHP_EOL .'Отзыв: '. "$feedback" . PHP_EOL. PHP_EOL. PHP_EOL,
+                                FILE_APPEND);
+                                }
+                                ?>
+
                             </div>
                         </form>  
                     </div>
                     <div class="thanks">
-                        <h4 class="thanks-text"></h4>
-                        <button class="ok-button">OK</button>
+                        <h4 class="thanks-text">Almost done :)</h4>
+                        <h4 class="thanks-text js-content-thanks-text"></h4>
+                        <button class="ok-button"></button>
                     </div>
                 </div>
                 <div class="white-text">
@@ -273,15 +291,27 @@
                             href="https://spb.hh.ru/applicant/resumes/view?resume=1076dd85ff09626c3a0039ed1f6e31764b6445"
                             target="_blank">hh</a></p>
                     <p class="inika-19 foot-href"><a href="https://github.com/Yuliya-Lov" target="_blank">GitHub</a></p>
-                    <p class="inika-19 tel foot-href">Call me</p>
+                    <p class="inika-19 tel foot-href"><a href="tel:+79117711441">Call me</a></p>
                     <span class="number">+7 911 771 14 41</span>
                 </div>
             </div>
             <div class="subscribe">
                 <p class="white-text">Subscribe to my weekly newsletter</p>
-                <form>
-                    <input  class="input-subscribe" type="email" placeholder="e-mail">
-                    <button class="pink-button">Subscribe</button>
+                <form  method="post"  id="subscribe-form" class="subscribe-me">
+                    <input  class="input-subscribe mail" type="email"  name="email-for-sub"  id="email-for-sub" placeholder="e-mail">
+                    <button type="button" name="subscribe-button" id="subscribe-button" class="pink-button">Subscribe</button>
+
+
+                    <?php
+                    $emailForSub = $_POST['email-for-sub'] ?? "";
+
+                    $SubscribeMe = __DIR__ . './subscribe-me.txt';
+                    if ((!(empty($emailForSub)))) {
+                    $datetime = date(DATE_ATOM);
+                    file_put_contents($SubscribeMe,'Дата подписки: ' . "$datetime" . PHP_EOL . 'E-mail: ' . "$emailForSub" . PHP_EOL. PHP_EOL. PHP_EOL, FILE_APPEND);
+                    }
+                    ?>
+                    
                 </form>
             </div>
         </div>
