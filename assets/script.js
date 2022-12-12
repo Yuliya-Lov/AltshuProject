@@ -3,7 +3,6 @@ let body = document.querySelector("body");
 //реализация верхнего меню
 let width = window.innerWidth;
 if (width < 901) {
-alert (window.innerWidth);
     let hamburger = document.querySelector('.hamburger');
     let topMenu = document.querySelector('ul');
     topMenu.style.display = "none";
