@@ -39,7 +39,6 @@
                 </footer>
             </div>
             <div class="mountains"></div>
-            <!-- <img class="mountains" src="./assets/Images/mountains.png" alt="mountains"> -->
         </article>
         <article class="experience">
             <div class="anchor" id="about"></div>
@@ -171,54 +170,31 @@
             </div>
             <div class="long-title_button">
                 <h2>Words On Design, Tech & Other Things I Love</h2>
-                <button class="pink-button">Explore all posts <b>&rarr;</b></button>
+                <button class="pink-button" onClick="document.location ='createPost.php'">Create your own post!</button>
             </div>
-            <!-- реализовано через JS
-                
-                <section class="part-of-blog">
-                <div class="picture-text">
-                    <img  class ="little-img" src="./assets/Images/Little_img_1.png" alt="Little image">
-                    <div class="blog-description">
-                        <h5 class="red-text date">21 Oct, 2022</h5>
-                        <h4>How I've started learning web</h4>
-                        <p class="inika-15">My prevus job was not related to web development, but I have exhausted my potential and decided to try a new field of activity.</p>
-                    </div>
-                </div>
-                <div class="view-post">
-                    <p class="red-text inika-19">View post &rarr;</p>
-                </div>
-            </section>
-            <hr>
-            <section class="part-of-blog">
-                <div class="picture-text">
-                    <img  class ="little-img" src="./assets/Images/Little_img_2.png" alt="Little image">
-                    <div class="blog-description">
-                        <h5 class="red-text date">03 Dec, 2022</h5>
-                        <h4>Why does JavaScript is so exciting</h4>
-                        <p class="inika-15">This programming language allows you to write frontend, backend, create
-                            websites, desktop or mobile applications, and even develop games in it.</p>
-                    </div>
-                </div>
-                <div class="view-post">
-                    <p class="red-text inika-19">View post &rarr;</p>
-                </div>
-            </section>
-            <hr>
-            <section class="part-of-blog">
-                <div class="picture-text">
-                    <img class ="little-img" src="./assets/Images/Little_img_3.png" alt="Little image">
-                    <div class="blog-description">
-                        <h5 class="red-text date">20 Dec, 2022</h5>
-                        <h4>How I've developed this site</h4>
-                        <p class="inika-15">This is my training ground, where I grow my skills)</p>
-                    </div>
-                </div>
-                <div class="view-post">
-                    <p class="red-text inika-19">View post &rarr;</p>
-                </div>
-            </section>
-            <hr>-->
-        </article>
+            <?php
+                $dbconnect = mysqli_connect("localhost","root", "", "altshu_final_project");
+                mysqli_query($dbconnect, "SET NAMES 'utf8'");
+
+                $querySelectAll = "SELECT * FROM news";
+                $query = mysqli_query($dbconnect, $querySelectAll);
+
+                while($news = mysqli_fetch_array($query)) {
+                    echo '<section class="part-of-blog">' . 
+                    '<div class="picture-text">';
+                    echo '<img  class ="little-img" src='.$news['img_url'].' alt="Little image">';
+                    echo '<div class="blog-description">
+                    <h5 class="red-text date">'. $news['created_at'] . '</h5>  <h4>' . $news['title'] . '</h4>
+                    <p class="inika-15">' . $news['description'] . '</p>
+                </div></div>';
+                    echo '<div class="view-post">';
+                    echo '<a href="/dashboard/project/AltshuProject/viewPost.php?id='.$news['id'].'" target="_blank"><p class="red-text inika-19">View post &rarr;</p></a>';
+                    echo '</div>';
+                    echo  '</section><hr>';
+                }
+
+            ?>
+</article>
         <nav class="fast-switch">
             <div class="book-background">
                 <h4>My education</h4>

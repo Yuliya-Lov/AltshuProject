@@ -458,6 +458,7 @@ hr {
 }
 .little-img {
     padding-right: 80px;
+    max-width: 376px;
 }
 .part-of-blog {
     display: flex;
@@ -753,6 +754,61 @@ textarea {
     background-color:#FB8D76;
 }
 
+.creating-form {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 40px;
+}
+.part-of-blog-view {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-start;
+    margin-top: 60px;
+
+}
+.blog-description-view {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    gap: 40px;
+    flex-grow: 1;
+
+}
+.picture-text-view {
+    display: flex;
+    flex-direction: row-reverse;
+    width: 100%;
+    align-items: stretch;
+    justify-content: space-between;
+    margin-top: 60px;
+    gap: 50px;
+}
+.little-img-view {
+    width: 30%;
+    max-width: 375px;
+}
+.view-buttons {
+    width: 100%;
+    display: flex;
+    flex-direction: row-reverse;
+    align-items: flex-end;
+    justify-content: space-around;
+    gap: 30px;
+}
+.blog-deleted {
+    margin-top: 80px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    flex-wrap: nowrap;
+}
+.main-delete {
+    height: 100vh;
+    display: flex;
+    justify-content: space-between;
+}
 
 @media screen and (max-width: 600px) {
 
@@ -803,10 +859,10 @@ textarea {
     margin-top: 42px;
 }
 .last-li {
-border-radius: 0 0 0 15px;
+    border-radius: 0 0 0 15px;
 }
 .mouseover-li{
-background-color:  #FB8D76 !important;
+    background-color:  #FB8D76 !important;
 }
 header {
     height: 14px;
@@ -900,24 +956,23 @@ table {
     margin-top: 3em;
 }
 tr th:nth-child(1),tr td:nth-child(1){
-
     display:none;
-  }
+}
 tr th:nth-child(3),tr td:nth-child(3){
     width: 50%;
     word-break: break-word;
-  }
-    .review {
-        display: none;
-    }
-    
-    .skills img{
-        padding-bottom: 2em;
-        margin:auto;
-        display: flex;
-        flex-direction: row;
-        justify-content: center;
-    }
+}
+.review {
+    display: none;
+}
+
+.skills img{
+    padding-bottom: 2em;
+    margin:auto;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+}
 .results {
     padding: 0 3em 4em 3em;
     min-width:calc(300px - 6em);
@@ -963,11 +1018,11 @@ img[alt="Image"] {
     min-width:calc(300px - 6em);
 }
 .services-first-section {
-        width: 100%;
-        height: fit-content;
-        box-sizing: border-box;
-        padding-right: 0; 
-        padding-bottom: 2em;
+    width: 100%;
+    height: fit-content;
+    box-sizing: border-box;
+    padding-right: 0; 
+    padding-bottom: 2em;
     }
 img[src*="symbol"] {
     padding-bottom: 1em;
@@ -992,10 +1047,10 @@ img[src*="symbol"] {
 }
 
 .left-align-sections {
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-        align-self: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-self: center;
 }
 .center-align-sections {
     display: flex;
@@ -1051,11 +1106,11 @@ img[src*="two_waves"] {
     flex-shrink: 0;
 }
 .little-img {
-    width: 100%;
+/*     width: 100%; */
     max-width: 376px;
-height: fit-content;
-padding-right: 0px;
-padding-bottom: 1em;
+    height: fit-content;
+    padding-right: 0px;
+    padding-bottom: 1em;
 }
 .blog-description {
     flex-shrink: 0; 
@@ -1071,21 +1126,6 @@ padding-bottom: 1em;
 .fast-switch {
     display: none;
 }
-        /* margin-top: 3em;
-        flex-direction: column;
-        min-width: 300px;
- */
-/* .book-background {
-    padding: 30px 3em;
-    min-width: calc(300px - 6em);
-}
-.red-about {
-    padding: 30px 3em;
-    min-width: calc(300px - 6em);
-}
-.fast-switch-comment {
-    text-align: center;
-} */
 .floor {
     padding: 0em 3em 1em 3em;
     min-width: calc(300px - 6em);
@@ -1135,11 +1175,11 @@ hr {
     grid-template-rows: 52px 52px;
 }
 .input-subscribe {
-        width: 220px;
-        height: 60px;
-   margin-left: 10px;
-   margin-right: 10px;
-   margin-bottom: 15px;
+    width: 220px;
+    height: 60px;
+    margin-left: 10px;
+    margin-right: 10px;
+    margin-bottom: 15px;
 }
 .foot-href a {
     font-size: 18px;
@@ -1245,7 +1285,7 @@ textarea {
 border-radius: 0 0 0 15px;
 }
 .mouseover-li{
-background-color:  #FB8D76 !important;
+    background-color:  #FB8D76 !important;
 }
 .mountains {
     display: none;
@@ -1311,10 +1351,10 @@ grid-column-end: 3;
 }  
 .experience {
     display: flex;
-flex-direction: column;
-flex-wrap: wrap;
-justify-content: space-between;
-padding: 0 4em 1em 4em;
+    flex-direction: column;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    padding: 0 4em 1em 4em;
 }
 .review {
     margin-top: 3em;
@@ -1349,8 +1389,8 @@ table {
 }
 .skills {
     display: grid;
- grid-template-columns: 1fr 1fr 1fr  1fr 1fr;
- justify-items: stretch;
+    grid-template-columns: 1fr 1fr 1fr  1fr 1fr;
+    justify-items: stretch;
     padding-top: 3em;
 } 
 .skills img{
@@ -1364,22 +1404,22 @@ img[src="./assets/Images/HTML+CSS.png"] {
     grid-column-start: 1;
     grid-column-end: 3;
     grid-row: 1;
-  }
-  img[src="./assets/Images/JS+React.png"] {
+}
+img[src="./assets/Images/JS+React.png"] {
     grid-column-start: 3;
     grid-column-end: 5;
     grid-row: 1;
-  }
-  img[src="./assets/Images/PHP.png"] {
+}
+img[src="./assets/Images/PHP.png"] {
     grid-column-start: 2;
     grid-column-end: 4;
     grid-row: 2;
-  }
-  img[src="./assets/Images/my_sql.png" ] {
+}
+img[src="./assets/Images/my_sql.png" ] {
     grid-column-start: 4;
     grid-column-end: 6;
     grid-row: 2;
-  }
+}
 .results {
     padding: 0 4em 60px 4em;
 }
@@ -1563,10 +1603,10 @@ hr {
     grid-template-columns: max-content;
 }
 .input-subscribe {
-   width: 274px;
-   margin-left: 10px;
-   margin-right: 10px;
-   margin-bottom: 20px;
+    width: 274px;
+    margin-left: 10px;
+    margin-right: 10px;
+    margin-bottom: 20px;
 }
 .copyright > p {
     padding-top: 0px;
@@ -1664,10 +1704,10 @@ hr {
 
     .experience {
         display: flex;
-    flex-direction: column;
-    flex-wrap: wrap;
-    justify-content: space-between;
-    padding: 0 5em 1em 5em;
+        flex-direction: column;
+        flex-wrap: wrap;
+        justify-content: space-between;
+        padding: 0 5em 1em 5em;
     }
     .review {
         margin-top: 3em;
@@ -1787,9 +1827,9 @@ hr {
     }
     .little-img {
         width: 30%;
-    height: fit-content;
-    padding-right: 40px;
-    align-self: center;
+        height: fit-content;
+        padding-right: 40px;
+        align-self: center;
     }
     .fast-switch {
         margin-top: 80px;

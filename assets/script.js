@@ -194,7 +194,7 @@ SubscribeButton.addEventListener ("click", () => {
 
 
 //динамический контент:
-let partBlogArray = [  
+/* let partBlogArray = [  
     {
     wherePic: "./assets/Images/Little_img_1.png", 
     when: "21 Oct, 2022",
@@ -266,3 +266,4 @@ lineBlog.classList.add("hr");
 
 createPartOfBlog(partBlogArray);
 
+ */
