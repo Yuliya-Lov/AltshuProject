@@ -42,7 +42,7 @@
 </article>
 </main>
 <footer class="floor">
-        <hr>
+        <hr class="floor-hr">
         <p class="white-text">© Powered by Yuliya LOV, 2022</p>
     </footer>
 </body>

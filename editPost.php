@@ -8,7 +8,7 @@
     <title>My project &#128161;</title>
 </head>
 
-<body>
+<body class="main-delete">
     <header>
         <img src="./assets/Images/Blog.png" alt="square">
         <div class="top-menu">
@@ -46,13 +46,16 @@
                 $PostUserName = $_GET['user_first_name'] ?? "";
             
             echo '<form class="creating-form" metod="GET">
-                <div>
+                <div class="textarea-part"">
                 <textarea  class="hide" name="id" type="text" rows=1 cols=51 placeholder=" write the post title here" required>'. $SelectedOne['id'] . '</textarea>
+                <h4 class="red-text">Title</h4>
                 <textarea name="title" type="text" rows=1 cols=51 placeholder=" write the post title here" required>'. $SelectedOne['title'] . '</textarea>
+                <h4 class="red-text">Description</h4>
                 <textarea name="description" type="text" rows=3 placeholder="write the post description here" required>' . $SelectedOne['description'] . '</textarea>
-                <textarea name="img_url" type="text"  rows=1 cols=51 placeholder="paste the image url here" required>' . $SelectedOne['img_url'] . '</textarea>  
-                <textarea name="full_text" type="text" placeholder="write the full text here" rows=7>' . $SelectedOne['full_text'] . '</textarea>
-                <textarea name="user_first_name" type="text" placeholder="write your name here" rows=1></textarea>
+                <h4 class="red-text">Image url</h4>
+                <textarea name="img_url" type="text"  rows=1 cols=51 placeholder="paste the image url here" required>' . $SelectedOne['img_url'] . '</textarea>
+                <h4 class="red-text">Full text</h4>  
+                <textarea name="full_text" type="text" placeholder="write the full text here" rows=4>' . $SelectedOne['full_text'] . '</textarea>
                 </div>';
                 echo '<div>
                 <form action="/dashboard/project/AltshuProject/enterEdit.php?id='. $PostId . 'title=' .$PostTitle .'description='. $PostDescription .'img_url=' .$PostImg .'" method="POST">
@@ -82,5 +85,9 @@
             </form>
         </article>    
     </main>
+    <footer class="floor">
+        <hr class="floor-hr">
+        <p class="white-text">© Powered by Yuliya LOV, 2022</p>
+    </footer>
 </body>
 </html>

@@ -8,7 +8,7 @@
     <title>My project &#128161;</title>
 </head>
 
-<body>
+<body class="main-delete">
     <header>
         <img src="./assets/Images/Blog.png" alt="square">
         <div class="top-menu">
@@ -32,9 +32,14 @@
                 $dbconnect = mysqli_connect("localhost","root", "", "altshu_final_project");
                 mysqli_query($dbconnect, "SET NAMES 'utf8'");
                 $Id = $_GET['id'];
-                $querySelectId = "SELECT * FROM news WHERE id = $Id";
+                $querySelectId = "SELECT * FROM news WHERE id = '$Id'";
                 $SelectedNews = mysqli_query($dbconnect, $querySelectId);        
                 $SelectedOne = mysqli_fetch_array($SelectedNews);
+                $SelectPostAythhorId = $SelectedOne['user_id'];
+                $querySelectAuthor = "SELECT * FROM users WHERE id = '$SelectPostAythhorId'";
+                $SelectedAuthor = mysqli_query($dbconnect, $querySelectAuthor);
+                $Author = mysqli_fetch_array($SelectedAuthor);
+                $AuthorName = $Author['first_name'];
 
                     echo '<section class="part-of-blog-view">
                     <h2>' . $SelectedOne['title'] . '</h2>
@@ -42,7 +47,7 @@
                     echo '<img  class ="little-img-view" src='.$SelectedOne['img_url'].' alt="Little image">';
                     echo '<div class="blog-description-view">
                     <p class="inika-15">' . $SelectedOne['description'] . '</p>
-                    <h5 class="red-text date">'. $SelectedOne['created_at'] . '</h5>';
+                    <h5 class="red-text date">'. $AuthorName .' , '. $SelectedOne['created_at'] . '</h5>';
                     echo '<div class="view-buttons">
                     <a href="/dashboard/project/AltshuProject/delete.php?id='.$SelectedOne['id'].'"><button class="pink-button" type="submit" name="delete-post">Delete post</button></a>
                     <a href="/dashboard/project/AltshuProject/editPost.php?id='.$SelectedOne['id'].'"><button class="white-button" name="edit-post">Edit post</button></a>';
@@ -54,7 +59,7 @@
     </article>        
 </main>
 <footer class="floor">
-        <hr>
+        <hr class="floor-hr">
         <p class="white-text">© Powered by Yuliya LOV, 2022</p>
 </footer>
 <script src="./assets/script.js"></script>

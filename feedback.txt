@@ -4,48 +4,6 @@ E-mail: jul-yaris@yandex.ru
 Отзыв: ffffffffff
 
 
-Дата размещения: 2022-12-07T07:49:14+01:00
-Имя пользователя: dddddd
-E-mail: jul-yaris@yandex.ru
-Отзыв: ggggggggggg
-
-
-Дата размещения: 2022-12-07T07:51:04+01:00
-Имя пользователя: dddd
-E-mail: jul-yaris@yandex.ru
-Отзыв: ddd
-
-
-Дата размещения: 2022-12-07T07:51:41+01:00
-Имя пользователя: dddd
-E-mail: jul-yaris@yandex.ru
-Отзыв: ddd
-
-
-Дата размещения: 2022-12-07T08:02:40+01:00
-Имя пользователя: ff
-E-mail: jul-yaris@yandex.ru
-Отзыв: fffffff
-
-
-Дата размещения: 2022-12-07T14:29:53+01:00
-Имя пользователя: vvvv
-E-mail: jul-yaris@yandex.ru
-Отзыв: vvvv
-
-
-Дата размещения: 2022-12-07T14:31:34+01:00
-Имя пользователя: vvvv
-E-mail: jul-yaris@yandex.ru
-Отзыв: vvvv
-
-
-Дата размещения: 2022-12-07T14:33:58+01:00
-Имя пользователя: vvvv
-E-mail: jul-yaris@yandex.ru
-Отзыв: vvvv
-
-
 Дата размещения: 2022-12-07T14:37:54+01:00
 Имя пользователя: vvvv
 E-mail: jul-yaris@yandex.ru
@@ -62,5 +20,17 @@ E-mail: jul-yaris@yandex.ru
 Имя пользователя: cccc
 E-mail: jul-yaris@yandex.ru
 Отзыв: cccc
+
+
+Дата размещения: 2022-12-14T14:15:18+01:00
+Имя пользователя: аааааааааааа
+E-mail: 2@3.ru
+Отзыв: ааааааааааааааа
+
+
+Дата размещения: 2022-12-14T14:15:40+01:00
+Имя пользователя: fff
+E-mail: 111@8888.ru
+Отзыв: ffffffffffff
 
 

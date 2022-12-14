@@ -188,7 +188,7 @@
                     <p class="inika-15">' . $news['description'] . '</p>
                 </div></div>';
                     echo '<div class="view-post">';
-                    echo '<a href="/dashboard/project/AltshuProject/viewPost.php?id='.$news['id'].'" target="_blank"><p class="red-text inika-19">View post &rarr;</p></a>';
+                    echo '<a href="/dashboard/project/AltshuProject/viewPost.php?id='.$news['id'].'"><p class="red-text inika-19">View post &rarr;</p></a>';
                     echo '</div>';
                     echo  '</section><hr>';
                 }

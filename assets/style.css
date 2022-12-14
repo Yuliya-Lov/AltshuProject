@@ -757,6 +757,7 @@ textarea {
 .creating-form {
     display: flex;
     flex-direction: row;
+    justify-content: space-between;
     align-items: center;
     gap: 40px;
 }
@@ -788,6 +789,7 @@ textarea {
 .little-img-view {
     width: 30%;
     max-width: 375px;
+    box-shadow: 4px 3px 3px 3px rgba(0, 0, 0, .2);
 }
 .view-buttons {
     width: 100%;
@@ -808,6 +810,17 @@ textarea {
     height: 100vh;
     display: flex;
     justify-content: space-between;
+}
+.textarea-part {
+    width: 80%;
+    margin-top: 30px;
+}
+.red {
+    color: red;
+    text-decoration: underline;
+}
+.floor-hr {
+    margin: 2em 0 2em 0;
 }
 
 @media screen and (max-width: 600px) {
@@ -1945,7 +1958,6 @@ hr {
         padding-left: 1em; 
         min-width: 270px;
     }
-
 }
 
 @media screen and (min-width: 1601px) {
