@@ -231,8 +231,8 @@
                     <div class="modal-win">
                         <h4>Feedback is important to me!<br>You can write it below:</h4>
                         <form  method="post" class="feedback-form">
-                            <p class="part-of-form">Your name:*<input class="input-of-form" id="name" name="name" type="text" required></p>
-                            <p class="part-of-form">Your e-mail:*<input class="input-of-form mail" id="e-mail" name="email" type="email"></p>
+                            <p class="part-of-form">Your name:<input class="input-of-form" id="name" name="name" type="text" required></p>
+                            <p class="part-of-form">Your e-mail:<input class="input-of-form mail" id="e-mail" name="email" type="email"></p>
                             <textarea rows=9 cols=51 id="feedback-text"  name="feedback-text" required></textarea>
                             <div class="form-buttons">
                                 <button  class="submit-modal-win" type="button">Submit</button>
